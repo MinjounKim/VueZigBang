@@ -1,32 +1,25 @@
 <template>
   <div>
-    <div @click = "modal = false">
-      <div class="black-bg" v-if = "modal == true">
-        <div class="white-bg">
-          <h4>상세페이지</h4>
-          <p>상세페이지내용</p>
-        </div>
-      </div>
-    </div>
-
-
-
-
     <div class="menu" >
       <a v-for="i in menu" :key="i">{{i}}</a>
     </div>
-    
+
+    <div class="black-bg" v-if = "modal == true" @click="modal = false">
+      <div class="white-bg">
+        <h4>{{data[index].modalTitle}}</h4>
+        <p>{{data[index].modatContents}}</p>
+      </div>
+    </div>
+
     <br/>
     <hr/>
     <br/>
     
-    <div v-for="(p,i) in data" :key="p">
-      <img @click="modal = true" class="room-img" :src = 'data[i].imgs'>
-      <h4 @click="modal = true">{{data[i].products}}</h4>
-      <p>{{data[i].price}}</p>
+    <div v-for="(d,i) in data" :key="d">
+      <img @click = "index = i; modal = true" class="room-img" :src='d.imgs'>
+      <h4>{{d.products}}</h4>
+      <p>{{d.price}}</p>
     </div>
-    
-
   </div>
 </template>
 
@@ -38,13 +31,13 @@ export default {
   name: 'App',
   data() {
     return {
+      index: 0,
       modal: false,
       menu: ['HOME','SHOP','ABOUT'],
-      //imgs: [require('./assets/room0.jpg'),require('./assets/room1.jpg'),require('./assets/room2.jpg')],
-      //products: ['원룸', '투룸', '복층'],
       data: datas,
-      price: [10,20,30],
     }
+  },
+  method: {
   },
   components: {
   }
