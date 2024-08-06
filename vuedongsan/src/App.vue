@@ -20,10 +20,10 @@
     <hr/>
     <br/>
     
-    <div v-for="(p,i) in products" :key="p">
-      <img @click="modal = true" class="room-img" :src = imgs[i]>
-      <h4 @click="modal = true">{{p}}</h4>
-      <p>{{price[i]}}</p>
+    <div v-for="(p,i) in data" :key="p">
+      <img @click="modal = true" class="room-img" :src = 'data[i].imgs'>
+      <h4 @click="modal = true">{{data[i].products}}</h4>
+      <p>{{data[i].price}}</p>
     </div>
     
 
@@ -32,14 +32,17 @@
 
 <script>
 
+import datas from "./assets/data"
+
 export default {
   name: 'App',
   data() {
     return {
       modal: false,
       menu: ['HOME','SHOP','ABOUT'],
-      imgs: [require('./assets/room0.jpg'),require('./assets/room1.jpg'),require('./assets/room2.jpg')],
-      products: ['원룸', '투룸', '복층'],
+      //imgs: [require('./assets/room0.jpg'),require('./assets/room1.jpg'),require('./assets/room2.jpg')],
+      //products: ['원룸', '투룸', '복층'],
+      data: datas,
       price: [10,20,30],
     }
   },
