@@ -1,11 +1,13 @@
 <template>
     <div>
-        <p>PAGE3</p>
+        <p>VillagePage</p>
     </div>
 </template>
 
 <script>
-export default {};
+export default {
+    name: "VillagePage",
+};
 </script>
 
 <style></style>

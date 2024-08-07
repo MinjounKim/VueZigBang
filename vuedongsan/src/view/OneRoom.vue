@@ -7,12 +7,6 @@
             </div>
         </div>
 
-        <div class="menu">
-            <a v-for="i in menu" :key="i">{{ i }}</a>
-        </div>
-        <br />
-        <hr />
-        <br />
 
         <div v-for="(d, i) in data" :key="d">
             <img
@@ -33,12 +27,11 @@
 import datas from "../assets/data";
 
 export default {
-    name: "AppMaiN",
+    name: "OneRoom",
     data() {
         return {
             index: 0,
             modal: false,
-            menu: ["HOME", "SHOP", "ABOUT"],
             data: datas,
         };
     },
@@ -67,17 +60,6 @@ div {
     background: white;
     border-radius: 8px;
     padding: 20px;
-}
-
-.menu {
-    background: darkslateblue;
-    padding: 15px;
-    border-radius: 5px;
-}
-.menu a {
-    color: white;
-    padding: 10px;
-    margin: 0 100px;
 }
 
 .room-img {
