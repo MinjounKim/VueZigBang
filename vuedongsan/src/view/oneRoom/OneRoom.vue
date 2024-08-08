@@ -7,7 +7,6 @@
             </div>
         </div>
 
-
         <div v-for="(d, i) in data" :key="d">
             <img
                 @click="
@@ -24,7 +23,7 @@
 </template>
 
 <script>
-import datas from "../assets/data";
+import datas from "../../assets/oneRoom/data";
 
 export default {
     name: "OneRoom",

@@ -4,12 +4,12 @@
             <div class="header-wrapper">
                 <ul>
                     <li>
-                        <RouterLink class="logoRoute" to="/FirstPage">
+                        <RouterLink class="logoRoute" to="/">
                             <img class="logo" :src="logoImg" />
                         </RouterLink>
                     </li>
                     <li>
-                        <RouterLink class="route" to="/ApartPage">
+                        <RouterLink class="route" to="/ApartPage.vue">
                             <span class="title">
                                 아파트
                                 <span class="subTitle">
@@ -24,7 +24,7 @@
                         </div>
                     </li>
                     <li>
-                        <RouterLink class="route" to="/VillagePage">
+                        <RouterLink class="route" to="/VillagePage.vue">
                             <span class="title">
                                 빌라, 투룸+
                                 <span class="subTitle">
@@ -39,7 +39,7 @@
                         </div>
                     </li>
                     <li>
-                        <RouterLink class="route" to="/OneRoom">
+                        <RouterLink class="route" to="/OneRoom.vue">
                             <span class="title">
                                 원룸
                                 <span class="subTitle"> <br />전월세</span>
@@ -63,7 +63,7 @@ export default {
     name: "AppHeader",
     data() {
         return {
-            logoImg: require("../assets/직방.png"),
+            logoImg: require("../assets/img/직방.png"),
         };
     },
 };
@@ -72,9 +72,9 @@ export default {
 <style>
 .menu {
     width: 1250px;
-    height: 25px;
+    height: 20px;
     background: white;
-    padding: 15px;
+    padding: 10px;
     display: flex;
     margin-top: 40px;
     align-items: center;
@@ -92,16 +92,20 @@ li {
     margin-right: 15px;
     padding: 2px;
 }
+li:has(.route) {
+    width: 200px;
+}
 .logo {
     height: 32px;
-    width: 150px;
+    width: 160px;
 }
 .route {
     color: black;
-    margin: 0 40px;
+    margin: -24px 25px;
     float: left;
     text-decoration-line: none;
     text-align: left;
+    border: 16px solid white;
 }
 .title {
     display: block;
@@ -128,17 +132,21 @@ li div {
     margin-left: 30px;
     text-align: left;
 }
-li:hover span {
+.route:hover span {
     color: rgb(241, 82, 33);
 }
 
 .dropDown {
+    z-index: 100;
     visibility: hidden;
-    width: 100%;
+    overflow: hidden;
+    height: 0;
+    width: 180px;
     background-color: white;
     border: 1px solid rgb(0, 0, 0, 0.25);
     color: black;
-    margin-top: 68px;
+    margin-top: 60px;
+    margin-right: 50px;
 }
 .dropDown > div {
     text-align: left;
@@ -150,6 +158,8 @@ li:hover span {
 }
 li:hover div {
     visibility: visible;
+    overflow: visible;
+    height: auto;
 }
 .dropDown > div:hover {
     background-color: #fafafa;
