@@ -1,7 +1,10 @@
 <template>
-    <div>
-        <img class="backImg" :src="img" />
-        <SearchHouse class="searchHouse" ></SearchHouse>
+    <div class="mainHome">
+        <div class="mainImg">
+            <img class="mainBackImg" :src="img" />
+        </div>
+
+        <SearchHouse class="searchHouse"></SearchHouse>
     </div>
 </template>
 
@@ -33,13 +36,23 @@ export default {
 </script>
 
 <style>
-.backImg {
+.mainHome {
     width: 100%;
-    height: 460px;
-    margin-top: -9px;
+    height: 100%;
+}
+.mainImg{
+    display: flex;
+    width: 100%;
+    height: 500px;
+    overflow:hidden;
+    margin:-9px auto;
+}
+.mainBackImg {
+    object-fit: cover;
+    width: 100%;
 }
 .searchHouse {
-    position: absolute;
-    transform: translate(50%, -110%);
+    position: relative;
+    margin: -320px auto;
 }
 </style>

@@ -59,11 +59,13 @@ div {
     background: white;
     border-radius: 8px;
     padding: 20px;
+    cursor: pointer;
 }
 
 .room-img {
     width: 70%;
     margin: 10px 50px;
     margin-top: 50px;
+    cursor: pointer;
 }
 </style>

@@ -100,6 +100,7 @@ li:has(.route) {
     width: 160px;
 }
 .route {
+    width: 160px;
     color: black;
     margin: -24px 25px;
     float: left;
@@ -139,7 +140,6 @@ li div {
 .dropDown {
     z-index: 100;
     visibility: hidden;
-    overflow: hidden;
     height: 0;
     width: 180px;
     background-color: white;
@@ -155,10 +155,10 @@ li div {
     white-space: nowrap;
     padding: 9px 15px;
     margin-left: 0px;
+    cursor: pointer;
 }
-li:hover div {
+li:hover .dropDown {
     visibility: visible;
-    overflow: visible;
     height: auto;
 }
 .dropDown > div:hover {
