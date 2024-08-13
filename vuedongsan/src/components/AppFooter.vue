@@ -1,7 +1,6 @@
 <template>
     <div class="footerDiv">
-        
-        <div v-for="i in 6" :key=i><br /></div>
+        <div v-for="i in 6" :key="i"><br /></div>
         <hr />
         <br />
         <span
@@ -31,6 +30,7 @@
             >서비스제휴문의 : partnership@zigbang.com | 분양광고 문의
             :ad@zigbang.com</span
         >
+        <br />
     </div>
 </template>
 
